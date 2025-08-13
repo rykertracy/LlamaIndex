@@ -10,6 +10,7 @@ loadEnv.load_env()
 
 # Import necessary LlamaIndex modules
 import asyncio
+import os
 from llama_index.core.agent.workflow import FunctionAgent
 from llama_index.llms.openai import OpenAI
 
@@ -17,9 +18,11 @@ from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 
 # ---------- Load Data ----------
-documents = SimpleDirectoryReader('data').load_data() # This directory contains a simple text file with some text.
+documents = SimpleDirectoryReader("./Starter-Tutorial/data").load_data(show_progress=True) # This directory contains a simple text file with some text.
 index = VectorStoreIndex.from_documents(documents, show_progress=True)
-query_engine = index.as_query_engine() 
+query_engine = index.as_query_engine(
+    llm=OpenAI(model="gpt-5-nano-2025-08-07"),
+) 
 
 # ---------- Define Agent and Funcitons ----------
 def multiply(a: float, b: float) -> float: # Defining input data type and output data type.
@@ -33,8 +36,10 @@ async def search_documents(query: str) -> str:
 
 agent = FunctionAgent(
     tools = [multiply, search_documents],
-    llm = OpenAI(model="gpt-5-nano-2025-08-07"),
-    system_prompt="You are a helpful assistant that can search documents and perform mathematical calculations.",
+    llm=OpenAI(model="gpt-5-nano-2025-08-07"),
+    #llm = OpenAI(model="gpt-5-nano-2025-08-07"),
+    system_prompt="""You are a helpful assistant that can perform calculations
+    and search through documents to answer questions.""",
 )
 
 async def main():
