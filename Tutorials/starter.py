@@ -1,3 +1,7 @@
+'''
+A basic agent example from: https://docs.llamaindex.ai/en/stable/getting_started/starter_example
+'''
+
 # Load API key from .env file in main directory
 import os
 from dotenv import load_dotenv
