@@ -14,3 +14,6 @@ Most of the programs here will use gpt-5-nano because it's quite cheap and more 
 - starter.py: A combination of a few scripts below.
 - chat-history.py: Having the language model recall context from the prompts.
 - calculator.py: A simple multiplication agent script.
+
+2. RAG-Tutorial
+Contains a RAG pipeline built based on the instructions at: https://docs.llamaindex.ai/en/stable/understanding/rag
