@@ -1,0 +1,22 @@
+# Python virtual environment
+venv/
+
+# Environment variables file
+.env
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Windows system files
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# LlamaIndex cache
+Llama-Cache/
