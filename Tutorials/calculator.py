@@ -1,5 +1,5 @@
 '''
-A basic agent example from: https://docs.llamaindex.ai/en/stable/getting_started/starter_example
+A basic calculator agent from: https://docs.llamaindex.ai/en/stable/getting_started/starter_example
 '''
 
 # Load API key from .env file in main directory
@@ -35,3 +35,9 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+'''
+Comments: Output was
+15000
+'''
