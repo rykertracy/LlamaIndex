@@ -2,6 +2,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import SimpleDirectoryReader, StorageContext
 from llama_index.core import VectorStoreIndex
 from llama_index.core import Settings
+from llama_index.llms.openai import OpenAI
 from pgstore import CreateDB, Vector_Store
 import torch
 import os
@@ -23,7 +24,7 @@ embed_model = HuggingFaceEmbedding(
     show_progress_bar=True
 )
 
-# Set the embedding model in teh global settings
+# Set the embedding model in the global settings
 Settings.embed_model = embed_model
 
 
@@ -34,7 +35,7 @@ vector_store = vs.create_index()
 
 ### Query the docs
 index = VectorStoreIndex.from_vector_store(vector_store=vector_store, show_progress=True)
-query_engine = index.as_query_engine()
+query_engine = index.as_query_engine(llm=OpenAI(model='gpt-5-2025-08-07'))
 
 response = query_engine.query("List 3 scientific methodologies that are used in this paper.")
 print(response)
