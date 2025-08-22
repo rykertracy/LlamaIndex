@@ -52,7 +52,7 @@ class Vector_Store:
             password=url.password,
             port=url.port,
             user=url.username,
-            table_name="test_doc",
+            table_name="vector_store",
             embed_dim=768,  # Adjust based on your embedding model
             hnsw_kwargs={
                 "hnsw_m": 16,
