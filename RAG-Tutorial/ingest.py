@@ -18,7 +18,7 @@ embed_model = HuggingFaceEmbedding(
     show_progress_bar=True
 )
 
-# Set the embedding model in teh global settings
+# Set the embedding model in the global settings
 Settings.embed_model = embed_model
 ### ------------------------------------
 
