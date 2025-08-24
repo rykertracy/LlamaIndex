@@ -23,3 +23,6 @@ Llama-Cache/
 
 # Directory of resumes
 data/
+
+# Prompts that contain sensitive information
+Resume-Creator/src/prompts.py
