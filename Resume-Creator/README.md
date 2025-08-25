@@ -1,7 +1,38 @@
-# Resume Creator
-Being at a position where I have skills that span multiple industries, I would like to allow an LLM to create a resume from a master list that adhere's to the text of the job description. Therefore, here I will create a RAG pipeline that ingests my resumes over the past three years and uses contextual retrieval to grab only data relevant to the job description.
 
-## Steps
-1. Store all resumes into a Milvus vector database.
-2. Summarize the job description. Draft a prompt that will reduce that summary down to a list of questions and key words.
-3. Compile a list of answers that address the keywords and questions from the job description. With a hybrid search (https://docs.llamaindex.ai/en/stable/examples/vector_stores/MilvusHybridIndexDemo)
+# Resume Creator
+
+This project uses a Retrieval-Augmented Generation (RAG) pipeline to create tailored resumes from a master list, leveraging LLMs and vector search. It ingests multiple resume documents, stores them in a PostgreSQL vector database, and generates concise CVs or answers relevant to job descriptions using contextual retrieval.
+
+## Workflow Overview
+1. **Ingest resumes**: PDF resumes are loaded and stored as vector nodes in a PostgreSQL database using LlamaIndex.
+2. **Summarize or query**: The job description or query is summarized and converted into a prompt for the LLM.
+3. **Contextual retrieval**: Relevant resume content is retrieved from the vector store and summarized into a concise CV or answers using the LLM.
+
+## Folder Structure
+- `data/` — Contains all resume PDFs and related documents.
+- `src/` — Source code for prompts, utilities, and database management.
+	- `prompts.py` — Generates rich prompts for the LLM.
+	- `utils.py` — Utility functions for fetching, aggregating, and summarizing resume nodes.
+	- `postgresDB/pgstore.py` — Manages PostgreSQL database and vector store integration.
+- `summarize_all_resumes.ipynb` — Jupyter notebook for summarizing all resumes in the database.
+- `Store_data.ipynb` — Notebook for ingesting and storing resume data.
+
+## Usage
+1. **Set up PostgreSQL**: Ensure a running PostgreSQL instance and update connection strings in the code.
+2. **Install dependencies**: Install required Python packages (see project requirements).
+3. **Ingest resumes**: Use `Store_data.ipynb` to load and store resume PDFs into the vector database.
+4. **Summarize resumes**: Run `summarize_all_resumes.ipynb` to retrieve and summarize all resume content using the LLM.
+
+## Example Notebooks
+- `Store_data.ipynb`: Ingests resume PDFs into the vector store.
+- `summarize_all_resumes.ipynb`: Retrieves all resume nodes and generates a summary CV using the LLM and prompt logic.
+
+## Technologies Used
+- Python, Jupyter Notebook
+- LlamaIndex
+- PostgreSQL
+- HuggingFace Embeddings
+- OpenAI LLM
+
+## References
+- [LlamaIndex Documentation](https://docs.llamaindex.ai/en/stable/)

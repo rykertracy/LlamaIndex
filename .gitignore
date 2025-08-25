@@ -26,3 +26,6 @@ data/
 
 # Prompts that contain sensitive information
 Resume-Creator/src/prompts.py
+
+# Output text documents
+Resume-Creator/*.txt
