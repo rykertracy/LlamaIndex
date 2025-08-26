@@ -1,5 +1,28 @@
+
 # RAG Tutorial
-This directory contains an example Retrieval-Augmented Generation pipeline built from the template present in: https://docs.llamaindex.ai/en/stable/understanding/rag
+
+A step-by-step tutorial for building a Retrieval-Augmented Generation (RAG) pipeline using LlamaIndex and PostgreSQL.
+
+## Workflow
+1. **Ingest documents**: Load example PDFs into the vector store (`ingest.py`).
+2. **Query the store**: Retrieve information using natural language queries (`interrogate.py`).
+3. **Manage the database**: Create and manage the vector store (`pgstore.py`).
+
+## Folder Structure
+- `documents/`: Example PDFs for ingestion.
+- `images/`: Diagrams of RAG pipeline stages.
+- `ingest.py`: Loads and stores documents.
+- `interrogate.py`: Queries the vector store.
+- `pgstore.py`: Database management.
+- `README.md`: Tutorial overview.
+
+## Quickstart
+1. Install dependencies.
+2. Run `ingest.py` to load documents.
+3. Run `interrogate.py` to query the vector store.
+
+## References
+- [LlamaIndex RAG Guide](https://docs.llamaindex.ai/en/stable/understanding/rag)
 
 The sections of the documentation layout as follows:
 1. Loading and Ingesion

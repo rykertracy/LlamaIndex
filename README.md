@@ -1,19 +1,27 @@
-# LlamaIndex Work
-Contains all work related to LlamaIndex.
 
-### Helpful Resources
-What is Async? https://docs.llamaindex.ai/en/stable/getting_started/async_python
+# LlamaIndex Workspace
 
-How does indexing work? https://docs.llamaindex.ai/en/stable/module_guides/indexing/index_guide
+This repository contains multiple projects and tutorials for working with LlamaIndex, Retrieval-Augmented Generation (RAG) pipelines, and agent workflows. Each folder is a self-contained example or application.
 
-1. LlamaIndex Tutorials
+## Projects & Tutorials
 
-Most of the programs here will use gpt-5-nano because it's quite cheap and more advanced models are not necessary for learning.
+### Resume-Creator
+Generate tailored resumes using a RAG pipeline, LlamaIndex, PostgreSQL, and LLMs. Ingest multiple resume PDFs, store them as vector nodes, and summarize or query them for job-specific CVs.
+- See `Resume-Creator/README.md` for details.
 
-- loadEnv.py: A script to reduce repetitive API Key definitions.
-- starter.py: A combination of a few scripts below.
-- chat-history.py: Having the language model recall context from the prompts.
-- calculator.py: A simple multiplication agent script.
+### RAG-Tutorial
+Step-by-step tutorial for building a RAG pipeline using LlamaIndex and PostgreSQL. Includes document ingestion, querying, and database management.
+- See `RAG-Tutorial/README.md` for details.
 
-2. RAG-Tutorial
-Contains a RAG pipeline built based on the instructions at: https://docs.llamaindex.ai/en/stable/understanding/rag
+### Starter-Tutorial
+Simple scripts for learning LlamaIndex basics, including environment setup, context recall, and agent examples.
+- See `Starter-Tutorial/README.md` for details.
+
+### Archive
+Storage for older or experimental notebooks.
+- See `Archive/README.md` for details.
+
+## Helpful Resources
+- [Async Python](https://docs.llamaindex.ai/en/stable/getting_started/async_python)
+- [Indexing Guide](https://docs.llamaindex.ai/en/stable/module_guides/indexing/index_guide)
+- [LlamaIndex RAG Guide](https://docs.llamaindex.ai/en/stable/understanding/rag)
