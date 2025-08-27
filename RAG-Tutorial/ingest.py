@@ -25,7 +25,7 @@ Settings.embed_model = embed_model
 
 ### ---------- PostgreSQL Database Connection ----------
 # Create the database connection
-connection_string = "postgresql://postgres:123456@localhost:5432"
+connection_string = "p"
 db = CreateDB(connection_string)
 db.create_database()
 

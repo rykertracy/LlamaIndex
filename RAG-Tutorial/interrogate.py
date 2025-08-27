@@ -29,7 +29,7 @@ Settings.embed_model = embed_model
 
 
 vs = Vector_Store(
-    connection_string="postgresql://postgres:123456@localhost:5432",
+    connection_string="",
     db_name="vector_db")
 vector_store = vs.create_index()
 
