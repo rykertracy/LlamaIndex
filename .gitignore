@@ -28,4 +28,7 @@ data/
 Resume-Creator/src/prompts.py
 
 # Output text documents
-Resume-Creator/*.txt
+Resume-Creator/results/
+
+# Miscellaneous
+how-to.md
